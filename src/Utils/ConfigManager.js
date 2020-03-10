@@ -1,4 +1,4 @@
-const Logger = require('../IO/Logger');
+const Logger = require('./Logger');
 const fs = require('fs');
 const readFileErrorHandler = require('../Handlers/ConfigManagerHandlers/readFileErrorHandler');
 const JSONParseErrorHandler = require('../Handlers/ConfigManagerHandlers/JSONParseErrorHandler');

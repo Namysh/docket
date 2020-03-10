@@ -1,6 +1,6 @@
-const CustomDataWrapper = require('../../Utils/IO/CustomDataWrapper');
-const Logger = require('../Logger');
-const BooleanByteWrapper = require('../../Utils/IO/BooleanByteWrapper');
+const CustomDataWrapper = require('../CustomDataWrapper');
+const Logger = require('../../Utils/Logger');
+const BooleanByteWrapper = require('../BooleanByteWrapper');
 const Version = require('../../IO/dofus/Types');
 
 class ProtocolMessage {

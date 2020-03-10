@@ -1,4 +1,4 @@
-const Logger = require('../IO/Logger');
+const Logger = require('../Utils/Logger');
 const Messages = require('../IO/dofus/Messages');
 const Version = require('../IO/dofus/Types').Version;
 const ByteArray = require('../IO/ByteArray');

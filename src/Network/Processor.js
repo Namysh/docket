@@ -1,7 +1,7 @@
 const Formatter = require('../Utils/Formatter');
 const AuthHandler = require('../handlers/AuthHandler');
-const Logger = require('../IO/Logger');
-const IO = require('../Utils/IO/CustomDataWrapper');
+const Logger = require('../Utils/Logger');
+const IO = require('../IO/CustomDataWrapper');
 const Messages = require('../IO/dofus/Messages');
 
 class Processor {

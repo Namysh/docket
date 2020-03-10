@@ -1,4 +1,4 @@
-const ByteArray = require('../../IO/ByteArray');
+const ByteArray = require('./ByteArray');
 
 
 

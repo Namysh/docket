@@ -2,8 +2,8 @@ const ByteArray = require('../IO/ByteArray');
 const NetworkMessage = require('../IO/dofus/NetworkMessage');
 const Formatter = require('../Utils/Formatter');
 const ArrayBufferToBuffer = require('arraybuffer-to-buffer');
-const CustomDataWrapper = require('../Utils/IO/CustomDataWrapper');
-const Logger = require('../IO/Logger');
+const CustomDataWrapper = require('../IO/CustomDataWrapper');
+const Logger = require('../Utils/Logger');
 const Processor = require('./Processor');
 
 class AuthServer{

@@ -15,9 +15,9 @@
 const RSA = require('crypto');
 const net = require('net');
 const ByteArray = require('bytearray-node');
-const BooleanByteWrapper = require('./utils/IO/BooleanByteWrapper');
+const BooleanByteWrapper = require('./IO/BooleanByteWrapper');
 const NodeRSA = require('node-rsa');
-const CustomDataWrapper = require('./utils/IO/CustomDataWrapper');
+const CustomDataWrapper = require('./IO/CustomDataWrapper');
 const crypto = require('crypto');
 // https://nodejs.org/api/net.html#net_new_net_server_options_connectionlistener
 

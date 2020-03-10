@@ -1,4 +1,4 @@
-const Logger = require('./IO/Logger');
+const Logger = require('./Utils/Logger');
 const ConfigManager = require('./utils/ConfigManager');
 const Auth = require('./Network/Auth');
 const LoginValidationAction = require('./Model/LoginValidationAction');

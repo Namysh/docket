@@ -1,4 +1,4 @@
-const ByteBoxOverflowError = require('../../Errors/BooleanByteWrapperErrors/ByteBoxOverflowError');
+const ByteBoxOverflowError = require('../Errors/BooleanByteWrapperErrors/ByteBoxOverflowError');
 
 const setFlag = (byte, position, boolean) => {
     if (position > 7) throw new ByteBoxOverflowError(position);

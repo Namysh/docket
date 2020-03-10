@@ -1,4 +1,4 @@
-const Logger = require('../IO/Logger');
+const Logger = require('../Utils/Logger');
 const net = require('net');
 const AuthServer = require('../Network/AuthServer');
 const LoginValidationAction = require('../Model/LoginValidationAction');
