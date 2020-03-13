@@ -1,0 +1,1 @@
+{"version":3,"file":"SyntaxErrorError.js","sourceRoot":"","sources":["../../../../src/Errors/ConfigManagerErrors/JSONParseErrors/SyntaxErrorError.ts"],"names":[],"mappings":";;AAAA;;GAEG;AACH,MAAqB,gBAAiB,SAAQ,KAAK;IAC/C,YAA0B,IAAY,EACZ,OAAe;QACrC,KAAK,EAAE,CAAC;QAFc,SAAI,GAAJ,IAAI,CAAQ;QACZ,YAAO,GAAP,OAAO,CAAQ;IAEzC,CAAC;CACJ;AALD,mCAKC"}

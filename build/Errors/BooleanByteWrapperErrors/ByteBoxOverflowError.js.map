@@ -1,0 +1,1 @@
+{"version":3,"file":"ByteBoxOverflowError.js","sourceRoot":"","sources":["../../../src/Errors/BooleanByteWrapperErrors/ByteBoxOverflowError.ts"],"names":[],"mappings":";;AAAA;;GAEG;AACH,MAAqB,oBAAqB,SAAQ,KAAK;IAInD,YAAmB,QAAgB;QAC/B,KAAK,EAAE,CAAC;QACR,IAAI,CAAC,IAAI,GAAG,kBAAkB,CAAC;QAC/B,IAAI,CAAC,OAAO,GAAG,gBAAgB,QAAQ,CAAC,QAAQ,EAAE,2DAA2D,CAAC;IAClH,CAAC;CACJ;AATD,uCASC"}
