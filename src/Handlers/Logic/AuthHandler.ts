@@ -4,15 +4,7 @@ const Version = require('../IO/dofus/Types').Version;
 import * as ByteArray from "bytearray-node";
 const {AESEnum} = require('../Enums/AESEnum');
 
-// TODO rename les arguments "client" par "server"
-/**
- * Traite le message 'ProtocolRequiredMessage'
- * @param client
- * @param packet
- */
-export const handleProtocolRequiredMessage = (client, packet) => {
-    Logger.debug("Required = " + packet.requiredVersion + " - Current = " + packet.currentVersion + "\r");
-};
+
 
 /**
  * Traite le message 'HelloConnectMessage'
