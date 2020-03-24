@@ -1,3 +1,6 @@
 # Docket.ts
-Bot socket Dofus en progression, dans le but d'apprendre le Typescript et d'élargir mes connaissances en développement.
 
+Socket bot on dofus, in order to learn TypeScript and to widen my knowledge in development
+
+
+Discord : Namysh#2433
