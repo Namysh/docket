@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Formatter = require("../Utils/Formatter");
-const Processor_1 = require("./Processor");
+const NetworkMessageHandler_1 = require("../Handlers/NetworkMessageHandler");
 const ByteArray = require("bytearray-node");
 const NetworkMessage_1 = require("../IO/dofus/NetworkMessage");
 const ArrayBufferToBuffer = require("arraybuffer-to-buffer");
@@ -33,7 +33,7 @@ class AuthServer {
         Logger.debug("Données reçues (messageId: " + packetId + ", len: " + packetLen + ", real len: " + buffer.data.length + ")");
         const b = ArrayBufferToBuffer(buffer.data.buffer);
         const messagePart = b.slice(buffer.position, buffer.position + packetLen) || null;
-        Processor_1.default.handle(this, packetId, new CustomDataWrapper_1.CustomDataWrapper(Formatter.toArrayBuffer(messagePart)));
+        NetworkMessageHandler_1.default.handle(this, packetId, new CustomDataWrapper_1.CustomDataWrapper(Formatter.toArrayBuffer(messagePart)));
         buffer.position = buffer.position + packetLen;
     }
     send(packet) {

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Logger = require('../../Utils/Logger');
-const Messages = require('../../IO/dofus/Messages');
+const Messages = require('../../Network/Messages');
 const Version = require('../../IO/dofus/Types').Version;
 const ByteArray = require("bytearray-node");
 const { AESEnum } = require('../../Enums/AESEnum');

@@ -1,5 +1,5 @@
 const Logger = require('../../Utils/Logger');
-const Messages = require('../../IO/dofus/Messages');
+const Messages = require('../../Network/Messages/Messages');
 const Version = require('../../IO/dofus/Types').Version;
 import * as ByteArray from "bytearray-node";
 const {AESEnum} = require('../../Enums/AESEnum');

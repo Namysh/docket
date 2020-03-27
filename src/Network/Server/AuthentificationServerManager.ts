@@ -1,7 +1,7 @@
-import * as Logger from '../Utils/Logger';
+import * as Logger from '../../Utils/Logger';
 import * as net from 'net';
-import AuthServer from '../Network/AuthServer';
-import LoginValidationAction from "../Model/LoginValidationAction";
+import AuthentificationServer from '../Server/AuthentificationServer';
+
 // Liste des serveurs connectés
 export const servers = [];
 
@@ -9,7 +9,7 @@ export const servers = [];
 export const start = (option, loginValidationAction) => {
     const client = net.createConnection(option, () => {
         Logger.info('Connecté au serveur d\'authentification');
-        const server = new AuthServer(client, loginValidationAction);
+        const server = new AuthentificationServer(client, loginValidationAction);
         servers.push(server);
         Logger.info(servers.length + ' serveur(s) connecté(s)');
     });

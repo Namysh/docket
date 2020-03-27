@@ -6,7 +6,7 @@ import * as Logger from '../Utils/Logger';
 /**
  * Gestionnaire de configuration
  */
-export default class ConfigManager {
+export default class Configurator {
     /**
      * Chemin du fichier de configuration
      */
@@ -24,18 +24,18 @@ export default class ConfigManager {
     static load: (callback: () => void) => void =
         (callback: () => void): void => {
             // Lecture du fichier de configuration
-            fs.readFile(ConfigManager.configFile, 'utf8', (readFileError: any, data: string) => {
+            fs.readFile(Configurator.configFile, 'utf8', (readFileError: any, data: string) => {
                 // Gestion des erreurs de fs.readFile
-                if (readFileError) readFileErrorHandler.handleError(readFileError.code, ConfigManager.configFile);
+                if (readFileError) readFileErrorHandler.handleError(readFileError.code, Configurator.configFile);
                 // Gestion des erreurs de JSON.parse
                 try {
-                    ConfigManager.configData = JSON.parse(data);
+                    Configurator.configData = JSON.parse(data);
                 } catch (JSONParseError) {
                     JSONParseErrorHandler.handleError(JSONParseError);
                 }
 
                 Logger.info('Fichier de configuration chargé avec succès ! ' +
-                    Object.keys(ConfigManager.configData).length +
+                    Object.keys(Configurator.configData).length +
                     ' données chargées');
 
                 callback();

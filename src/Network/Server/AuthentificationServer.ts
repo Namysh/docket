@@ -1,14 +1,14 @@
-import * as Formatter from "../Utils/Formatter";
-import Processor from "./Processor";
+import * as Formatter from "../../Utils/Formatter";
+import NetworkMessageHandler from "../../Handlers/Network/NetworkMessageHandler";
 
 import * as ByteArray from "bytearray-node";
-import NetworkMessage from '../IO/dofus/NetworkMessage';
+import NetworkMessage from '../../IO/Dofus/NetworkMessage';
 import * as ArrayBufferToBuffer from 'arraybuffer-to-buffer';
-import {CustomDataWrapper} from '../IO/CustomDataWrapper';
-import * as Logger from '../Utils/Logger';
+import {CustomDataWrapper} from '../../IO/CustomDataWrapper';
+import * as Logger from '../../Utils/Logger';
 
 
-export default class AuthServer{
+export default class AuthentificationServer{
 
     static numberOfServers = 0;
 
@@ -17,7 +17,7 @@ export default class AuthServer{
     constructor(private socket, private loginValidationAction){
         this.socket = socket;
         this.receive();
-        this.id = AuthServer.numberOfServers++;
+        this.id = AuthentificationServer.numberOfServers++;
         this.loginValidationAction = loginValidationAction;
     }
 
@@ -44,7 +44,7 @@ export default class AuthServer{
         const b = ArrayBufferToBuffer(buffer.data.buffer);
 
         const messagePart = b.slice(buffer.position, buffer.position + packetLen) || null;
-        Processor.handle(this, packetId, new CustomDataWrapper(Formatter.toArrayBuffer(messagePart)));
+        NetworkMessageHandler.handle(this, packetId, new CustomDataWrapper(Formatter.toArrayBuffer(messagePart)));
         buffer.position = buffer.position + packetLen;
     }
 

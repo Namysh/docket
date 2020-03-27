@@ -1,9 +1,9 @@
-import * as AuthHandler from '../Handlers/Logic/AuthHandler';
-import * as HandShakeHandler from '../Handlers/Logic/HandShakeHandler';
-import * as Logger from '../Utils/Logger';
-import * as Messages from '../IO/dofus/Messages';
+import * as AuthHandler from '../Logic/AuthHandler';
+import * as HandShakeHandler from '../Logic/HandShakeHandler';
+import * as Logger from '../../Utils/Logger';
+import * as Messages from '../Network/Messages/Messages';
 
-export default class Processor {
+export default class NetworkMessageHandler {
 
     static PROTOCOL_HANDLERS = {
         1: {message: Messages.ProtocolRequiredMessage, handler: HandShakeHandler.handleProtocolRequiredMessage},
@@ -14,7 +14,7 @@ export default class Processor {
     };
 
     static handle(client, messageId, buffer) {
-        const handler = Processor.PROTOCOL_HANDLERS[parseInt(messageId)];
+        const handler = NetworkMessageHandler.PROTOCOL_HANDLERS[parseInt(messageId)];
 
         if (handler != null) {
             const packet = new handler.message();
