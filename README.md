@@ -8,4 +8,6 @@ Prochainement:
 
 ![alt text](https://github.com/Namysh/Docket.ts/blob/master/img/console.png "console")
 
+Inspiré par : https://github.com/w0dm4n/Noxus
+
 Discord : Namysh#2433
