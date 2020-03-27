@@ -1,4 +1,4 @@
-import Formatter from "../Utils/Formatter";
+import * as Formatter from "../Utils/Formatter";
 import Processor from "./Processor";
 
 import * as ByteArray from "bytearray-node";
@@ -39,7 +39,7 @@ export default class AuthServer{
         const lenType = header & 3;
         const packetLen = NetworkMessage.getPacketLength(buffer, lenType);
 
-        Logger.network("Données reçues (messageId: " + packetId + ", len: " + packetLen + ", real len: " + buffer.data.length + ")");
+        Logger.debug("Données reçues (messageId: " + packetId + ", len: " + packetLen + ", real len: " + buffer.data.length + ")");
 
         const b = ArrayBufferToBuffer(buffer.data.buffer);
 

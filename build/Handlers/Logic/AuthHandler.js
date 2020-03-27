@@ -1,25 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const Logger = require('../../Utils/Logger');
 const Messages = require('../../IO/dofus/Messages');
 const Version = require('../../IO/dofus/Types').Version;
-import * as ByteArray from "bytearray-node";
-const {AESEnum} = require('../../Enums/AESEnum');
-
-
-
+const ByteArray = require("bytearray-node");
+const { AESEnum } = require('../../Enums/AESEnum');
 /**
  * Traite le message 'HelloConnectMessage'
  * @param client
  * @param packet
  */
-export const handleHelloConnectMessage = (client, packet) => {
+exports.handleHelloConnectMessage = (client, packet) => {
     Logger.debug("Salt = " + packet.salt + " - Key = " + packet.key + "\r");
-
     const key = packet.key;
     const salt = packet.salt;
-    const AESKey = generateRandomAESKey();
+    const AESKey = exports.generateRandomAESKey();
     const loginValidationAction = client.loginValidationAction;
     Logger.debug("-- pas encore implémenté");
-
     /*client.send(new Messages.IdentificationMessage(
         new Version(2, 54, 16, 343, 0),
         'fr',
@@ -30,18 +27,14 @@ export const handleHelloConnectMessage = (client, packet) => {
         false
     ));*/
 };
-
 // TODO créer une classe expres
-export const generateRandomAESKey = () => {
+exports.generateRandomAESKey = () => {
     const byteArray = new ByteArray();
-
     for (let i = 0; i < AESEnum.AES_KEY_LENGTH; i++) {
         byteArray[i] = Math.floor(Math.random() * 256);
     }
-
     return byteArray;
 };
-
 // TODO creer une classe expres
 const cipherRsa = (login, pwd, certificate) => {
     let baOut = null; // ByteArray
@@ -49,8 +42,7 @@ const cipherRsa = (login, pwd, certificate) => {
     let n = 0; // int
     let baIn = new ByteArray(); // ByteArray
     baIn.writeUTFBytes(this._salt);
-    baIn.writeBytes(generateRandomAESKey());
-
+    baIn.writeBytes(exports.generateRandomAESKey());
     if (certificate) {
         baIn.writeUnsignedInt(certificate.id);
         baIn.writeUTFBytes(certificate.hash);
@@ -73,8 +65,6 @@ const cipherRsa = (login, pwd, certificate) => {
     {
         _log.error("Erreur lors du log des informations de login " + e.getStackTrace());
     }*/
-
-
     /*
     baOut = RSA.publicEncrypt(this._publicKey, baIn);
     var ret = new Vector. < int > (); // :Vector.<int>
@@ -86,12 +76,12 @@ const cipherRsa = (login, pwd, certificate) => {
     }
     return ret;*/
 };
-
 /**
  * Traite le message 'SystemMessageDisplayMessage'
  * @param client
  * @param packet
  */
-export const handleSystemMessageDisplayMessage = (client, packet) => {
+exports.handleSystemMessageDisplayMessage = (client, packet) => {
     Logger.debug("hangUp = " + packet.hangUp + " - msgId = " + packet.msgId + " - parameters - " + packet.parameters + "\r");
 };
+//# sourceMappingURL=AuthHandler.js.map

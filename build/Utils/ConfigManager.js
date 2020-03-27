@@ -34,9 +34,9 @@ ConfigManager.load = (callback) => {
         catch (JSONParseError) {
             JSONParseErrorHandler.handleError(JSONParseError);
         }
-        Logger.info('Configuration file loaded successfully ! ' +
+        Logger.info('Fichier de configuration chargé avec succès ! ' +
             Object.keys(ConfigManager.configData).length +
-            ' datas loaded');
+            ' données chargées');
         callback();
     });
 };

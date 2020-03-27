@@ -11,10 +11,12 @@ export default class ConfigManager {
      * Chemin du fichier de configuration
      */
     static configFile = "../config.json";
+
     /**
      * Données récupérées dans le fichier de configuraiton
      */
     static configData = null;
+
     /**
      * Charge le fichier de configuration et exécute le callback
      * @param callback
@@ -32,9 +34,9 @@ export default class ConfigManager {
                     JSONParseErrorHandler.handleError(JSONParseError);
                 }
 
-                Logger.info('Configuration file loaded successfully ! ' +
+                Logger.info('Fichier de configuration chargé avec succès ! ' +
                     Object.keys(ConfigManager.configData).length +
-                    ' datas loaded');
+                    ' données chargées');
 
                 callback();
 

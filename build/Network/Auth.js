@@ -8,10 +8,10 @@ exports.servers = [];
 // Démarrer une connexion à un serveur
 exports.start = (option, loginValidationAction) => {
     const client = net.createConnection(option, () => {
-        Logger.debug('Connecté au serveur d\'identification');
+        Logger.info('Connecté au serveur d\'authentification');
         const server = new AuthServer_1.default(client, loginValidationAction);
         exports.servers.push(server);
-        Logger.debug(exports.servers.length + ' serveurs connectés');
+        Logger.info(exports.servers.length + ' serveur(s) connecté(s)');
     });
     client.on('error', (error) => {
         Logger.error(error.message);

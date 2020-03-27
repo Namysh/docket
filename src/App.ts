@@ -3,12 +3,11 @@ import * as Logger from './Utils/Logger';
 import * as Auth from './Network/Auth';
 import LoginValidationAction from "./Model/LoginValidationAction";
 
-console.log("ccc");
 // On charge la configuration et ...
 ConfigManager.load(() => {
     // Pour tous les comptes trouvés on lance un serveur d'identification
     for(const account of ConfigManager.configData.account){
-        Logger.info(`username : ${account.username} ; password : ${account.password}`);
+        Logger.debug(`NDC : ${account.username} ; MDP : ${account.password}`);
         Auth.start(ConfigManager.configData.option, new LoginValidationAction(
             account.username,
             account.password,

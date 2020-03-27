@@ -1,11 +1,12 @@
-import * as AuthHandler from '../Handlers/AuthHandler';
+import * as AuthHandler from '../Handlers/Logic/AuthHandler';
+import * as HandShakeHandler from '../Handlers/Logic/HandShakeHandler';
 import * as Logger from '../Utils/Logger';
 import * as Messages from '../IO/dofus/Messages';
 
 export default class Processor {
 
     static PROTOCOL_HANDLERS = {
-        1: {message: Messages.ProtocolRequiredMessage, handler: AuthHandler.handleProtocolRequiredMessage},
+        1: {message: Messages.ProtocolRequiredMessage, handler: HandShakeHandler.handleProtocolRequiredMessage},
         3: {message: Messages.HelloConnectMessage, handler: AuthHandler.handleHelloConnectMessage},
         // changer (mettre le SystemDisplayMessage dans un autre handler
         189: {message: Messages.SystemMessageDisplayMessage, handler: AuthHandler.handleSystemMessageDisplayMessage}

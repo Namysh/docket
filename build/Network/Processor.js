@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const AuthHandler = require("../Handlers/AuthHandler");
+const AuthHandler = require("../Handlers/Logic/AuthHandler");
+const HandShakeHandler = require("../Handlers/Logic/HandShakeHandler");
 const Logger = require("../Utils/Logger");
 const Messages = require("../IO/dofus/Messages");
 class Processor {
@@ -25,7 +26,7 @@ class Processor {
     }
 }
 Processor.PROTOCOL_HANDLERS = {
-    1: { message: Messages.ProtocolRequiredMessage, handler: AuthHandler.handleProtocolRequiredMessage },
+    1: { message: Messages.ProtocolRequiredMessage, handler: HandShakeHandler.handleProtocolRequiredMessage },
     3: { message: Messages.HelloConnectMessage, handler: AuthHandler.handleHelloConnectMessage },
     // changer (mettre le SystemDisplayMessage dans un autre handler
     189: { message: Messages.SystemMessageDisplayMessage, handler: AuthHandler.handleSystemMessageDisplayMessage }

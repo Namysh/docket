@@ -1,5 +1,5 @@
-export default class Formatter {
-    static toArrayBuffer(buffer): ArrayBuffer {
+export const toArrayBuffer: (buffer: any) => ArrayBuffer =
+    (buffer): ArrayBuffer => {
         const bufferLen = buffer.length || 0;
         const arrayBuffer = new ArrayBuffer(bufferLen);
         const view = new Uint8Array(arrayBuffer);
@@ -7,5 +7,4 @@ export default class Formatter {
             view[i] = buffer[i];
         }
         return arrayBuffer;
-    }
-}
+    };

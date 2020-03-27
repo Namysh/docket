@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Formatter_1 = require("../Utils/Formatter");
+const Formatter = require("../Utils/Formatter");
 const Processor_1 = require("./Processor");
 const ByteArray = require("bytearray-node");
 const NetworkMessage_1 = require("../IO/dofus/NetworkMessage");
@@ -19,7 +19,7 @@ class AuthServer {
     receive() {
         // ou var _this = this
         this.socket.on('data', data => {
-            const buffer = new CustomDataWrapper_1.CustomDataWrapper(Formatter_1.default.toArrayBuffer(data));
+            const buffer = new CustomDataWrapper_1.CustomDataWrapper(Formatter.toArrayBuffer(data));
             while (buffer.bytesAvailable > 0) {
                 this.processPart(buffer);
             }
@@ -30,10 +30,10 @@ class AuthServer {
         const packetId = header >> 2;
         const lenType = header & 3;
         const packetLen = NetworkMessage_1.default.getPacketLength(buffer, lenType);
-        Logger.network("Données reçues (messageId: " + packetId + ", len: " + packetLen + ", real len: " + buffer.data.length + ")");
+        Logger.debug("Données reçues (messageId: " + packetId + ", len: " + packetLen + ", real len: " + buffer.data.length + ")");
         const b = ArrayBufferToBuffer(buffer.data.buffer);
         const messagePart = b.slice(buffer.position, buffer.position + packetLen) || null;
-        Processor_1.default.handle(this, packetId, new CustomDataWrapper_1.CustomDataWrapper(Formatter_1.default.toArrayBuffer(messagePart)));
+        Processor_1.default.handle(this, packetId, new CustomDataWrapper_1.CustomDataWrapper(Formatter.toArrayBuffer(messagePart)));
         buffer.position = buffer.position + packetLen;
     }
     send(packet) {

@@ -1,4 +1,4 @@
-import * as Logger from '../Utils/Logger';
+import * as Logger from '../../Utils/Logger';
 
 /**
  * Traite le message 'ProtocolRequiredMessage'
